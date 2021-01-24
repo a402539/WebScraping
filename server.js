@@ -14,6 +14,6 @@ var URL = 'https://www.petergen.com/bovkalo/duhov/mda.html';
 
 request(URL, function (err, res, body) {
     if (err) throw err;
-    console.log(body);
+    console.log(iconv.encode(iconv.decode(body, "cp1251"), "utf8").toString());
     console.log(res.statusCode);
 });
