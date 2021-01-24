@@ -1,0 +1,9 @@
+// Отслеживание обновление страниц со списками священников
+// https://www.petergen.com/bovkalo/
+// Списки выпускников духовных учебных заведений https://www.petergen.com/bovkalo/duhov.html
+// https://www.petergen.com/bovkalo/duhov/mda.html
+var req = new XMLHttpRequest();
+req.open("GET", "https://www.petergen.com/bovkalo/duhov/mda.html", false);
+req.send(null);
+console.log(req.responseText);
+// → This is the content of data.txt
