@@ -55,17 +55,17 @@ function readURL(url) {
     });
 }
 
-var res = "";
-for(var i=1;i<817;i++){
-    //console.log(i);
-    fs.appendFileSync("pravoslavnoe-duhovenstvo.html", `${i}`+'\n');
-    readURL(URL+i)
-        .then(g)
-        .catch(err => err.message);
-}
-
 function g(data) {
     res = [...data.matchAll(/<a href="\/person\/\d+\/">[^<]+<\/a>/g)].map(it => it[0]).join('\n') + '\n';
     fs.appendFileSync("pravoslavnoe-duhovenstvo.html", res);
 }
 
+var i = 50;
+//console.log(i);
+fs.appendFileSync("pravoslavnoe-duhovenstvo.html", URL+i+'\n');
+pr = readURL(URL+i)
+    .then(g)
+    .catch(err => err.message);
+process.on('exit', (code) => {
+    console.log(`About to exit with code: ${code}`);
+});
