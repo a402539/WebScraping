@@ -60,7 +60,7 @@ function g(data) {
     fs.appendFileSync("pravoslavnoe-duhovenstvo.html", res);
 }
 
-var i = 50;
+var i = 701;
 //console.log(i);
 fs.appendFileSync("pravoslavnoe-duhovenstvo.html", URL+i+'\n');
 pr = readURL(URL+i)
